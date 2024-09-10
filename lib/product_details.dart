@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'coffee_data.dart';
 
 class ProductDetailsPage extends StatefulWidget {
+  final Coffee coffee;
+  const ProductDetailsPage({super.key, required this.coffee});
+
   @override
   _ProductDetailsPageState createState() => _ProductDetailsPageState();
 }
 
 class _ProductDetailsPageState extends State<ProductDetailsPage> {
-  String selectedSize = 'M'; // Default size selection
+  String selectedSize = 'M';
 
   @override
   Widget build(BuildContext context) {
@@ -15,22 +19,20 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
         backgroundColor: Colors.white,
         elevation: 0,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.black),
+          icon: const Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () {
             Navigator.pop(context);
           },
         ),
         actions: [
           IconButton(
-            icon: Icon(Icons.favorite_border, color: Colors.black),
-            onPressed: () {
-              // Handle favorite button tap
-            },
+            icon: const Icon(Icons.favorite_border, color: Colors.black),
+            onPressed: () {},
           ),
         ],
         title: Text(
-          'Detail',
-          style: TextStyle(color: Colors.black),
+          widget.coffee.name,
+          style: const TextStyle(color: Colors.black),
         ),
         centerTitle: true,
       ),
@@ -40,37 +42,35 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Coffee Image
               Container(
                 height: 200,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(16),
                   image: DecorationImage(
-                    image: AssetImage('assets/coffee_image.png'), // Your coffee image asset
+                    image: AssetImage(widget.coffee.image),
                     fit: BoxFit.cover,
                   ),
                 ),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
 
-              // Product Name and Rating
               Text(
-                'Caffe Mocha',
-                style: TextStyle(
+                widget.coffee.name,
+                style: const TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 8),
-              Text(
+              const SizedBox(height: 8),
+              const Text(
                 'Ice/Hot',
                 style: TextStyle(
                   color: Colors.grey,
                 ),
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
 
-              Row(
+              const Row(
                 children: [
                   Icon(Icons.star, color: Colors.amber),
                   SizedBox(width: 4),
@@ -92,39 +92,39 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                 ],
               ),
 
-              SizedBox(height: 16),
-              Divider(),
+              const SizedBox(height: 16),
+              const Divider(),
 
-              // Description Section
-              Text(
+              const Text(
                 'Description',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               Text(
-                'A cappuccino is an approximately 150 ml (5 oz) beverage, '
-                    'with 25 ml of espresso coffee and 85 ml of fresh milk the fo...',
-                style: TextStyle(color: Colors.grey),
+                widget.coffee.description,
+                style: const TextStyle(color: Colors.grey),
+              ),
+              const SizedBox(height: 8),
+              Text(
+                widget.coffee.calories,
+                style: const TextStyle(color: Colors.grey),
               ),
               TextButton(
-                onPressed: () {
-                  // Handle read more
-                },
-                child: Text(
+                onPressed: () {},
+                child: const Text(
                   'Read More',
                   style: TextStyle(color: Colors.brown),
                 ),
               ),
 
-              SizedBox(height: 16),
-              Divider(),
+              const SizedBox(height: 16),
+              const Divider(),
 
-              // Size Section
-              Text(
+              const Text(
                 'Size',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: ['S', 'M', 'L'].map((size) {
@@ -145,23 +145,21 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                 }).toList(),
               ),
 
-              SizedBox(height: 16),
-
-              // Price and Buy Now Button
+              const SizedBox(height: 16),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
+                      const Text(
                         'Price',
                         style: TextStyle(color: Colors.grey),
                       ),
-                      SizedBox(height: 4),
+                      const SizedBox(height: 4),
                       Text(
-                        '\$4.53',
-                        style: TextStyle(
+                        widget.coffee.price,
+                        style: const TextStyle(
                           fontSize: 22,
                           fontWeight: FontWeight.bold,
                           color: Colors.brown,
@@ -171,18 +169,16 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                   ),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      padding: EdgeInsets.symmetric(horizontal: 32, vertical: 12),
-                      primary: Colors.brown, // Background color
+                      padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
+                      primary: Colors.brown,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12),
                       ),
                     ),
-                    onPressed: () {
-                      // Handle buy now
-                    },
-                    child: Text(
+                    onPressed: () {},
+                    child: const Text(
                       'Buy Now',
-                      style: TextStyle(fontSize: 16),
+                      style: TextStyle(fontSize: 16, color: Colors.white),
                     ),
                   ),
                 ],

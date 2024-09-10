@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class ProductList extends StatelessWidget {
-  // Sample data for products (name and price)
   final List<Map<String, String>> products = [
     {'name': 'Americano', 'price': '4.99'},
     {'name': 'Latte', 'price': '5.49'},
@@ -9,20 +8,19 @@ class ProductList extends StatelessWidget {
     {'name': 'Espresso', 'price': '3.99'},
     {'name': 'Mocha', 'price': '6.49'},
     {'name': 'Macchiato', 'price': '5.99'},
-    // Add more products as needed
   ];
 
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
       scrollDirection: Axis.vertical,
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2, // 2 items horizontally
-        crossAxisSpacing: 8, // Space between items horizontally
-        mainAxisSpacing: 8, // Space between items vertically
-        childAspectRatio: 0.75, // Adjust as needed
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        crossAxisSpacing: 8,
+        mainAxisSpacing: 8,
+        childAspectRatio: 0.75,
       ),
-      itemCount: products.length, // Number of products
+      itemCount: products.length,
       itemBuilder: (context, index) {
         return Container(
           decoration: BoxDecoration(
@@ -34,14 +32,14 @@ class ProductList extends StatelessWidget {
             children: [
               Expanded(
                 child: Image.asset(
-                  'assets/Image & Rating.png', // Replace with your product image
+                  'assets/Image & Rating.png',
                   fit: BoxFit.cover,
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
-                  products[index]['name']!, // Dynamic product name
+                  products[index]['name']!,
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
               ),
@@ -51,16 +49,16 @@ class ProductList extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      '\$${products[index]['price']}', // Dynamic product price
+                      '\$${products[index]['price']}',
                       style: TextStyle(fontSize: 16, color: Colors.brown),
                     ),
                     GestureDetector(
                       onTap: () {
-                        // Handle add to cart functionality
+
                       },
                       child: Icon(
                         Icons.add_circle,
-                        color: Colors.brown, // You can change the color as needed
+                        color: Colors.brown,
                       ),
                     ),
                   ],

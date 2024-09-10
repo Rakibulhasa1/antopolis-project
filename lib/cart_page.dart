@@ -6,8 +6,8 @@ class CartPage extends StatefulWidget {
 }
 
 class _CartPageState extends State<CartPage> {
-  bool isDelivery = true; // To toggle between Delivery and Pickup
-  int quantity = 1; // For item quantity
+  bool isDelivery = true;
+  int quantity = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,6 @@ class _CartPageState extends State<CartPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Toggle between Deliver and Pick Up
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -90,8 +89,6 @@ class _CartPageState extends State<CartPage> {
                 ],
               ),
               SizedBox(height: 24),
-
-              // Delivery Address Section
               Text(
                 'Delivery Address',
                 style: TextStyle(
@@ -117,7 +114,6 @@ class _CartPageState extends State<CartPage> {
                 children: [
                   ElevatedButton(
                     onPressed: () {
-                      // Handle Edit Address
                     },
                     style: ElevatedButton.styleFrom(
                       primary: Colors.white,
@@ -130,7 +126,6 @@ class _CartPageState extends State<CartPage> {
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      // Handle Add Note
                     },
                     style: ElevatedButton.styleFrom(
                       primary: Colors.white,
@@ -145,14 +140,12 @@ class _CartPageState extends State<CartPage> {
               ),
               SizedBox(height: 16),
               Divider(),
-
-              // Product Section
               Row(
                 children: [
                   ClipRRect(
                     borderRadius: BorderRadius.circular(8),
                     child: Image.asset(
-                      'assets/coffee_image.png', // Replace with your image asset
+                      'assets/coffee_image.png',
                       width: 50,
                       height: 50,
                       fit: BoxFit.cover,
@@ -198,20 +191,15 @@ class _CartPageState extends State<CartPage> {
               ),
               SizedBox(height: 16),
               Divider(),
-
-              // Discount Section
               ListTile(
                 contentPadding: EdgeInsets.zero,
                 leading: Icon(Icons.local_offer, color: Colors.brown),
                 title: Text('1 Discount is Applied'),
                 trailing: Icon(Icons.arrow_forward_ios, size: 16),
                 onTap: () {
-                  // Handle Discount Click
                 },
               ),
               Divider(),
-
-              // Payment Summary
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 16.0),
                 child: Text(
@@ -248,20 +236,16 @@ class _CartPageState extends State<CartPage> {
               ),
               SizedBox(height: 16),
               Divider(),
-
-              // Payment Method
               ListTile(
                 contentPadding: EdgeInsets.zero,
                 leading: Icon(Icons.wallet, color: Colors.brown),
                 title: Text('Cash/Wallet'),
                 trailing: Icon(Icons.expand_more),
                 onTap: () {
-                  // Handle Payment Method Click
                 },
               ),
               Divider(),
 
-              // Order Button
               SizedBox(height: 16),
               Center(
                 child: ElevatedButton(
@@ -273,7 +257,6 @@ class _CartPageState extends State<CartPage> {
                     ),
                   ),
                   onPressed: () {
-                    // Handle Order Now
                   },
                   child: Text('Order', style: TextStyle(fontSize: 16,color:
                   Colors.white)),

@@ -7,7 +7,7 @@ class FavoritePage extends StatelessWidget {
       "description": "Smooth and creamy with steamed milk",
       "servings": "For 1 Person",
       "calories": "15 Calories",
-      "image": "assets/Property 1=Coffee, Property 2=1.png", // Replace with actual image assets
+      "image": "assets/Property 1=Coffee, Property 2=1.png",
     },
     {
       "name": "Caramel Macchiato",
@@ -60,7 +60,6 @@ class FavoritePage extends StatelessWidget {
           IconButton(
             icon: Icon(Icons.notifications_none, color: Colors.black),
             onPressed: () {
-              // Notification button action
             },
           ),
         ],

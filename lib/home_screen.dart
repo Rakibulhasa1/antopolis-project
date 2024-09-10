@@ -3,6 +3,8 @@
 import 'package:antopolis_project/product_details.dart';
 import 'package:flutter/material.dart';
 
+import 'coffee_data.dart';
+
 class HomeScreen extends StatefulWidget {
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -10,6 +12,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateMixin {
   late TabController _tabController;
+  List<Coffee> coffeeItems = parseCoffeeData(coffeeJson);
   @override
   void initState() {
     super.initState();
@@ -45,7 +48,6 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                     ),
                     GestureDetector(
                       onTap: () {
-                        // Handle location change
                       },
                       child: const Row(
                         children: [
@@ -60,8 +62,6 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                   ],
                 ),
                 const SizedBox(height: 10),
-
-                // Search bar
                 Stack(
                   children: [
                     TextField(
@@ -89,13 +89,12 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                         ),
                         filled: true,
                         fillColor: Color(0xff2a2a2a),
-                        contentPadding: EdgeInsets.only(left: 16.0, right: 56.0), // Adjust right padding to accommodate filter button
+                        contentPadding: EdgeInsets.only(left: 16.0, right: 56.0),
                       ),
                     ),
                   ],
                 ),
                 const SizedBox(height: 10),
-                // Promo image
                 Container(
                   height: 150,
                   decoration: BoxDecoration(
@@ -140,13 +139,9 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                   child: TabBarView(
                     controller: _tabController,
                     children: [
-                      // All Coffee Tab Content
                       buildProductList(),
-                      // Machiato Tab Content
                       buildProductList(),
-                      // Latte Tab Content
                       buildProductList(),
-                      // Americano Tab Content
                       buildProductList(),
                     ],
                   ),
@@ -169,11 +164,17 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
           mainAxisSpacing: 8,
           childAspectRatio: 0.75,
         ),
-        itemCount: 20,
+        itemCount: coffeeItems.length,
         itemBuilder: (context, index) {
+          final coffee = coffeeItems[index];
           return GestureDetector(
-            onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>ProductDetailsPage()));
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ProductDetailsPage(coffee: coffee),
+                ),
+              );
             },
             child: Container(
               decoration: BoxDecoration(
@@ -185,22 +186,28 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                 children: [
                   Expanded(
                     child: Image.asset(
-                      'assets/Image & Rating.png',
+                      coffee.image,
                       fit: BoxFit.cover,
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      'Product Name $index',
-                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                      coffee.name,
+                      style: const TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
-                  const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 8.0),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
                     child: Text(
-                      '\$4.99',
-                      style: TextStyle(fontSize: 16, color: Colors.brown),
+                      coffee.price,
+                      style: const TextStyle(
+                        fontSize: 16,
+                        color: Colors.brown,
+                      ),
                     ),
                   ),
                 ],
@@ -208,7 +215,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
             ),
           );
         },
-      ),
+      )
     );
   }
 }
