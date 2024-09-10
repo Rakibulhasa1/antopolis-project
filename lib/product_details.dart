@@ -84,11 +84,11 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                     style: TextStyle(color: Colors.grey),
                   ),
                   Spacer(),
-                  Icon(Icons.local_shipping, color: Colors.brown),
+                  Icon(Icons.local_shipping, color: Color(0xffc67c4e)),
                   SizedBox(width: 8),
-                  Icon(Icons.coffee, color: Colors.brown),
+                  Icon(Icons.coffee, color: Color(0xffc67c4e)),
                   SizedBox(width: 8),
-                  Icon(Icons.coffee, color: Colors.brown),
+                  Icon(Icons.coffee, color: Color(0xffc67c4e)),
                 ],
               ),
 
@@ -113,7 +113,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                 onPressed: () {},
                 child: const Text(
                   'Read More',
-                  style: TextStyle(color: Colors.brown),
+                  style: TextStyle(color: Color(0xffc67c4e)),
                 ),
               ),
 
@@ -136,10 +136,10 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                         selectedSize = size;
                       });
                     },
-                    selectedColor: Colors.brown.withOpacity(0.2),
+                    selectedColor: Color(0xffc67c4e).withOpacity(0.2),
                     backgroundColor: Colors.white,
                     labelStyle: TextStyle(
-                      color: selectedSize == size ? Colors.brown : Colors.black,
+                      color: selectedSize == size ? Color(0xffc67c4e) : Colors.black,
                     ),
                   );
                 }).toList(),
@@ -162,7 +162,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                         style: const TextStyle(
                           fontSize: 22,
                           fontWeight: FontWeight.bold,
-                          color: Colors.brown,
+                          color: Color(0xffc67c4e),
                         ),
                       ),
                     ],
@@ -170,7 +170,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
-                      primary: Colors.brown,
+                      primary: Color(0xffc67c4e),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12),
                       ),

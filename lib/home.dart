@@ -32,10 +32,11 @@ class _HomePageState extends State<HomePage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey.shade200,
         body: _pages[_selectedIndex],
         bottomNavigationBar: BottomNavigationBar(
           backgroundColor: Colors.white,
-          selectedItemColor: Colors.brown,
+          selectedItemColor: Color(0xffc67c4e),
           unselectedItemColor: Colors.grey,
           showSelectedLabels: false,
           showUnselectedLabels: false,
@@ -50,7 +51,7 @@ class _HomePageState extends State<HomePage>
                     'assets/Home.svg',
                     width: 24,
                     height: 24,
-                    color: _selectedIndex == 0 ? Colors.brown : Colors.grey,
+                    color: _selectedIndex == 0 ? Color(0xffc67c4e) : Colors.grey,
                   ),const SizedBox(height: 2,),
                   if (_selectedIndex == 0)
                     Container(
@@ -58,7 +59,7 @@ class _HomePageState extends State<HomePage>
                       height: 6,
                       decoration: const BoxDecoration(
                           shape: BoxShape.rectangle,
-                          color: Colors.brown,
+                          color: Color(0xffc67c4e),
                           borderRadius: BorderRadius.all(Radius.circular(10))
                       ),
                       margin: const EdgeInsets.only(top: 2),
@@ -75,7 +76,7 @@ class _HomePageState extends State<HomePage>
                     'assets/Heart.png',
                     width: 24,
                     height: 24,
-                    color: _selectedIndex == 1 ? Colors.brown : Colors.grey,
+                    color: _selectedIndex == 1 ? Color(0xffc67c4e) : Colors.grey,
                   ),
                   SizedBox(height: 2,),
                   if (_selectedIndex == 1)
@@ -84,7 +85,7 @@ class _HomePageState extends State<HomePage>
                       height: 6,
                       decoration: const BoxDecoration(
                           shape: BoxShape.rectangle,
-                          color: Colors.brown,
+                          color: Color(0xffc67c4e),
                           borderRadius: BorderRadius.all(Radius.circular(10))
                       ),
                       margin: const EdgeInsets.only(top: 2),
@@ -100,7 +101,7 @@ class _HomePageState extends State<HomePage>
                     'assets/Bag.png',
                     width: 24,
                     height: 24,
-                    color: _selectedIndex == 2 ? Colors.brown : Colors.grey,
+                    color: _selectedIndex == 2 ? Color(0xffc67c4e) : Colors.grey,
                   ),
                   const SizedBox(height: 2,),
                   if (_selectedIndex == 2)
@@ -109,7 +110,7 @@ class _HomePageState extends State<HomePage>
                       height: 6,
                       decoration: const BoxDecoration(
                           shape: BoxShape.rectangle,
-                          color: Colors.brown,
+                          color: Color(0xffc67c4e),
                           borderRadius: BorderRadius.all(Radius.circular(10))
                       ),
                       margin: const EdgeInsets.only(top: 2),
@@ -125,7 +126,7 @@ class _HomePageState extends State<HomePage>
                     'assets/Notification.png',
                     width: 24,
                     height: 24,
-                    color: _selectedIndex == 3 ? Colors.brown : Colors.grey,
+                    color: _selectedIndex == 3 ? Color(0xffc67c4e) : Colors.grey,
                   ),
                   const SizedBox(height: 2,),
                   if (_selectedIndex == 3)
@@ -134,7 +135,7 @@ class _HomePageState extends State<HomePage>
                       height: 6,
                       decoration: const BoxDecoration(
                         shape: BoxShape.rectangle,
-                        color: Colors.brown,
+                        color: Color(0xffc67c4e),
                         borderRadius: BorderRadius.all(Radius.circular(10))
                       ),
                       margin: const EdgeInsets.only(top: 2),

@@ -25,7 +25,7 @@ class ProductList extends StatelessWidget {
         return Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
-            color: Colors.brown[100],
+            color: Color(0xffc67c4e)[100],
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -50,7 +50,7 @@ class ProductList extends StatelessWidget {
                   children: [
                     Text(
                       '\$${products[index]['price']}',
-                      style: TextStyle(fontSize: 16, color: Colors.brown),
+                      style: TextStyle(fontSize: 16, color: Color(0xffc67c4e)),
                     ),
                     GestureDetector(
                       onTap: () {
@@ -58,7 +58,7 @@ class ProductList extends StatelessWidget {
                       },
                       child: Icon(
                         Icons.add_circle,
-                        color: Colors.brown,
+                        color: Color(0xffc67c4e),
                       ),
                     ),
                   ],

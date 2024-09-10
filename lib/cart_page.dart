@@ -47,7 +47,7 @@ class _CartPageState extends State<CartPage> {
                       child: Container(
                         padding: EdgeInsets.symmetric(vertical: 12),
                         decoration: BoxDecoration(
-                          color: isDelivery ? Colors.brown : Colors.grey[200],
+                          color: isDelivery ? Color(0xffc67c4e) : Colors.grey[200],
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Center(
@@ -72,7 +72,7 @@ class _CartPageState extends State<CartPage> {
                       child: Container(
                         padding: EdgeInsets.symmetric(vertical: 12),
                         decoration: BoxDecoration(
-                          color: !isDelivery ? Colors.brown : Colors.grey[200],
+                          color: !isDelivery ? Color(0xffc67c4e) : Colors.grey[200],
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Center(
@@ -145,7 +145,7 @@ class _CartPageState extends State<CartPage> {
                   ClipRRect(
                     borderRadius: BorderRadius.circular(8),
                     child: Image.asset(
-                      'assets/coffee_image.png',
+                      'assets/Property 1=Coffee, Property 2=1.png',
                       width: 50,
                       height: 50,
                       fit: BoxFit.cover,
@@ -193,7 +193,7 @@ class _CartPageState extends State<CartPage> {
               Divider(),
               ListTile(
                 contentPadding: EdgeInsets.zero,
-                leading: Icon(Icons.local_offer, color: Colors.brown),
+                leading: Icon(Icons.local_offer, color: Color(0xffc67c4e)),
                 title: Text('1 Discount is Applied'),
                 trailing: Icon(Icons.arrow_forward_ios, size: 16),
                 onTap: () {
@@ -238,7 +238,7 @@ class _CartPageState extends State<CartPage> {
               Divider(),
               ListTile(
                 contentPadding: EdgeInsets.zero,
-                leading: Icon(Icons.wallet, color: Colors.brown),
+                leading: Icon(Icons.wallet, color: Color(0xffc67c4e)),
                 title: Text('Cash/Wallet'),
                 trailing: Icon(Icons.expand_more),
                 onTap: () {
@@ -247,11 +247,12 @@ class _CartPageState extends State<CartPage> {
               Divider(),
 
               SizedBox(height: 16),
-              Center(
+              SizedBox(
+                width: MediaQuery.of(context).size.width,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     padding: EdgeInsets.symmetric(horizontal: 100, vertical: 16),
-                    primary: Colors.brown,
+                    primary: Color(0xffc67c4e),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),

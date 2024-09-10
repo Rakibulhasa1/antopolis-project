@@ -27,14 +27,14 @@ class FavoritePage extends StatelessWidget {
       "name": "Mocha",
       "description": "Espresso mixed with chocolate and milk",
       "servings": "For 1 Person",
-      "calories": "200 Calories",
+      "calories": "20 Calories",
       "image": "assets/Property 1=Coffee, Property 2=4.png",
     },
     {
       "name": "Cappuccino",
       "description": "Classic with steamed milk and foam",
       "servings": "For 1 Person",
-      "calories": "180 Calories",
+      "calories": "18 Calories",
       "image": "assets/Property 1=Coffee, Property 2=5.png",
     },
   ];
